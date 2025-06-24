@@ -1,0 +1,13 @@
+{
+  "sourceDirs": ["src"],
+  "outDir": "dist",
+  "fableLibDir": "node_modules/fable-library",
+  "define": [
+    "FABLE_COMPILER"
+  ],
+  "compilerOptions": {
+    "language": "javascript",
+    "optimize": true,
+    "debugMode": false
+  }
+} 

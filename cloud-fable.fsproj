@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarnAsError>true</WarnAsError>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <WarningsNotAsErrors />
+    
+    <!-- Strict functional programming rules -->
+    <OtherFlags>--warnon:20 --warnaserror:20 --warnon:3391 --warnaserror:3391</OtherFlags>
+    
+    <!-- Additional warnings for mutability and exceptions -->
+    <DefineConstants>FABLE_COMPILER</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src/App.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="4.0.0" />
+    <PackageReference Include="Fable.Browser.Dom" Version="2.4.4" />
+  </ItemGroup>
+
+</Project> 
