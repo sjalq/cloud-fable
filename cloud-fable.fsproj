@@ -9,19 +9,24 @@
     <WarningsNotAsErrors />
     
     <!-- Strict functional programming rules -->
-    <OtherFlags>--warnon:20 --warnaserror:20 --warnon:3391 --warnaserror:3391</OtherFlags>
+    <OtherFlags>--warnon:20 --warnaserror:20 --warnon:3391 --warnaserror:3391 --warnaserror+ --warnon:44 --warnaserror:44</OtherFlags>
+    
+    <!-- Additional strict settings -->
+    <WarningLevel>5</WarningLevel>
+    <NoWarn></NoWarn>
     
     <!-- Additional warnings for mutability and exceptions -->
     <DefineConstants>FABLE_COMPILER</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="src/App.fs" />
+    <Compile Include="src/Worker.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="4.0.0" />
     <PackageReference Include="Fable.Browser.Dom" Version="2.4.4" />
+    <PackageReference Include="Fable.Promise" Version="3.2.0" />
   </ItemGroup>
 
 </Project> 

@@ -1,0 +1,9 @@
+name = "cloud-fable-worker"
+main = "dist/bundle.js"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "cloud-fable-worker"
+
+[env.staging]
+name = "cloud-fable-worker-staging" 

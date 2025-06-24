@@ -1,18 +1,21 @@
 {
   "name": "cloud-fable",
   "version": "1.0.0",
-  "description": "F# Fable project with strict functional programming rules",
+  "description": "F# Fable Cloudflare Worker using direct fable CLI",
   "scripts": {
-    "build": "/home/schalk/.dotnet/tools/fable . --outDir dist",
-    "watch": "/home/schalk/.dotnet/tools/fable watch . --outDir dist", 
-    "serve": "webpack-dev-server",
-    "dev": "npm run build && npm run serve",
-    "dev:watch": "/home/schalk/.dotnet/tools/fable watch . --outDir dist & webpack-dev-server"
+    "build": "/home/schalk/.dotnet/tools/fable . --outDir dist && cp dist/src/Worker.js dist/worker.js && npx rollup -c",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.0",
+    "@babel/preset-env": "^7.25.0",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "rollup": "^4.28.1",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.0",
-    "webpack-dev-server": "^4.15.0"
-  },
-  "dependencies": {}
-} 
+    "webpack-dev-server": "^4.15.0",
+    "wrangler": "^3.0.0"
+  }
+}
